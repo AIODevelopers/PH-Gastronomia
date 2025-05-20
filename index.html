@@ -74,6 +74,31 @@
             text-align: center;
             padding: 40px 0;
         }
+
+        /* Adicionar ao CSS existente */
+        .social-links {
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            text-decoration: none;
+            color: white;
+            background-color: var(--primary-color);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: scale(1.05);
+            background-color: var(--secondary-color);
+        }
+        
+        .social-link i {
+            margin-right: 10px;
+        }
         
         @media (max-width: 600px) {
             body {
@@ -88,6 +113,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="header">
@@ -97,13 +123,22 @@
     
     <nav>
         <a href="#inicial" onclick="mostrarConteudo('inicial')">Inicial</a>
-        <a href="#termos" onclick="mostrarConteudo('termos')">Termos</a>
-        <a href="#privacidade" onclick="mostrarConteudo('privacidade')">Política</a>
+        <a href="#termos" onclick="mostrarConteudo('termos')">Termos de Compromisso</a>
+        <a href="#privacidade" onclick="mostrarConteudo('privacidade')">Política de Privacidade</a>
     </nav>
 
     <div id="inicial" class="content">
-        <h1 class="company-name">PH Serviços Gastronomicos LTDA</h1>
-        <p class="slogan">🍽️ O melhor do foodservice, do nosso negócio para o seu!</p>
+        <h2>Entre em Contato</h2>
+        
+        <div class="social-links">
+            <a href="https://wa.me/5522998346842" class="social-link" target="_blank">
+                <i class="fab fa-whatsapp"></i>WhatsApp
+            </a>
+        
+            <a href="https://www.instagram.com/phgastronomia_/" class="social-link" target="_blank">
+                <i class="fab fa-instagram"></i>Instagram
+            </a>
+        </div>
     </div>
 
     <div id="termos" class="content">
