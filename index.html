@@ -12,107 +12,77 @@
         
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
             line-height: 1.6;
         }
         
         .header {
-            background-color: var(--primary-color);
-            color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-bottom: 0;
+            padding: 40px 0;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--primary-color);
         }
         
         .company-name {
             font-size: 2.5em;
+            color: var(--primary-color);
             margin: 0;
-            padding: 0;
-        }
-        
-        .main-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .service-card {
-            background-color: #f8f8f8;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .service-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .hero-section {
-            background-color: #f8f8f8;
-            padding: 60px 20px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .hero-section h2 {
-            color: var(--primary-color);
-            font-size: 2em;
             margin-bottom: 20px;
         }
         
-        .contact-section {
-            text-align: center;
-            margin-top: 60px;
-            padding: 40px 20px;
-            background-color: var(--secondary-color);
-            color: white;
+        .slogan {
+            font-size: 1.2em;
+            color: var(--secondary-color);
+            margin: 0;
         }
         
-        .social-links {
+        .content {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
             margin-top: 20px;
         }
         
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 1.2em;
+        .content.active {
+            display: block;
         }
         
         nav {
-            background-color: var(--secondary-color);
-            padding: 10px 0;
+            margin-bottom: 20px;
             text-align: center;
         }
         
         nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 5px;
             display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            text-decoration: none;
+            color: #fff;
+            background-color: var(--primary-color);
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
         
         nav a:hover {
-            background-color: var(--primary-color);
-            border-radius: 5px;
+            background-color: var(--secondary-color);
+        }
+
+        #inicial {
+            text-align: center;
+            padding: 40px 0;
         }
         
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
             }
-            
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
             .company-name {
                 font-size: 2em;
             }
@@ -121,53 +91,87 @@
 </head>
 <body>
     <div class="header">
-        <h1 class="company-name">PH Serviços Gastronomicos</h1>
+        <h1 class="company-name">PH Serviços Gastronomicos LTDA</h1>
+        <p class="slogan">🍽️ O melhor do foodservice, do nosso negócio para o seu!</p>
     </div>
     
     <nav>
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#contato">Contato</a>
-        <a href="#termos">Documentos Legais</a>
+        <a href="#inicial" onclick="mostrarConteudo('inicial')">Inicial</a>
+        <a href="#termos" onclick="mostrarConteudo('termos')">Termos</a>
+        <a href="#privacidade" onclick="mostrarConteudo('privacidade')">Política</a>
     </nav>
 
-    <div class="hero-section">
-        <h2>Experiências Gastronômicas Únicas</h2>
-        <p>Qualidade e profissionalismo em cada detalhe do seu evento</p>
+    <div id="inicial" class="content">
+        <h1 class="company-name">PH Serviços Gastronomicos LTDA</h1>
+        <p class="slogan">🍽️ O melhor do foodservice, do nosso negócio para o seu!</p>
     </div>
 
-    <div class="main-content">
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Buffet para Eventos</h3>
-                <p>Cardápios personalizados para casamentos, aniversários, eventos corporativos e celebrações especiais.</p>
-            </div>
-            
-            <div class="service-card">
-                <h3>Personal Chef</h3>
-                <p>Experiência gastronômica exclusiva com chef profissional em sua residência.</p>
-            </div>
-            
-            <div class="service-card">
-                <h3>Consultoria Gastronômica</h3>
-                <p>Desenvolvimento de cardápios e treinamento para estabelecimentos.</p>
-            </div>
-        </div>
+    <div id="termos" class="content">
+        <h1>Termos de Uso</h1>
         
-        <div class="contact-section">
-            <h2>Entre em Contato</h2>
-            <p>Transforme seu evento em uma experiência gastronômica memorável</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com/phgastronomia_/" target="_blank">Instagram: @phgastronomia_</a>
-                <p>WhatsApp: [Seu número de contato]</p>
-                <p>Email: [Seu email]</p>
-            </div>
+        <div class="section">
+            <h2>1. Comunicação via WhatsApp</h2>
+            <p>Ao contratar nossos serviços, o cliente concorda que:</p>
+            <ul>
+                <li>Receberá mensagens automáticas relacionadas a pedidos e cobranças via WhatsApp</li>
+                <li>O número de WhatsApp fornecido será utilizado para comunicações oficiais da empresa</li>
+                <li>É responsável por manter seu número de contato atualizado</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>2. Horários de Atendimento</h2>
+            <p>As mensagens automáticas serão enviadas apenas em horário comercial (9h às 18h) em dias úteis.</p>
+        </div>
+    </div>
+
+    <div id="privacidade" class="content">
+        <h1>Política de Privacidade</h1>
+
+        <div class="section">
+            <h2>1. Dados Coletados</h2>
+            <p>Para prestação dos nossos serviços, coletamos:</p>
+            <ul>
+                <li>Nome completo</li>
+                <li>Número de WhatsApp</li>
+                <li>Endereço para entrega/atendimento</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>2. Uso do WhatsApp</h2>
+            <p>Utilizamos a API oficial do WhatsApp Business para:</p>
+            <ul>
+                <li>Envio de confirmações de pedidos</li>
+                <li>Comunicações sobre entregas</li>
+                <li>Envio de cobranças</li>
+                <li>Atendimento ao cliente</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>3. Seus Direitos</h2>
+            <p>Você pode a qualquer momento:</p>
+            <ul>
+                <li>Solicitar outro canal de comunicação</li>
+                <li>Atualizar seus dados de contato</li>
+                <li>Pedir informações sobre seus dados armazenados</li>
+            </ul>
         </div>
     </div>
 
     <script>
-        // Script existente permanece aqui
+        function mostrarConteudo(id) {
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+
+        window.onload = function() {
+            const hash = window.location.hash.substring(1) || 'inicial';
+            mostrarConteudo(hash);
+        };
     </script>
 </body>
 </html>
