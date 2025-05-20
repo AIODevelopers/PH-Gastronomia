@@ -114,6 +114,52 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- Adicionar ao CSS existente -->
+<style>
+    footer {
+        margin-top: 50px;
+        padding: 30px 0;
+        border-top: 2px solid var(--primary-color);
+        text-align: center;
+        background-color: #f9f9f9;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .footer-section {
+        text-align: left;
+    }
+
+    .footer-section h3 {
+        color: var(--primary-color);
+        margin-bottom: 15px;
+    }
+
+    .footer-links a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        display: block;
+        margin: 5px 0;
+    }
+
+    .footer-links a:hover {
+        color: var(--primary-color);
+    }
+
+    .legal-info {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+        font-size: 0.9em;
+        color: var(--secondary-color);
+    }
+</style>
 </head>
 <body>
     <div class="header">
@@ -127,19 +173,20 @@
         <a href="#privacidade" onclick="mostrarConteudo('privacidade')">Política de Privacidade</a>
     </nav>
 
-    <div id="inicial" class="content">
-        <h2>Entre em Contato</h2>
+<!-- Atualizar a seção inicial com endereço -->
+<div id="inicial" class="content">
+    <h2>Entre em Contato</h2>
+    
+    <div class="social-links">
+        <a href="https://wa.me/5522998346842" class="social-link" target="_blank">
+            <i class="fab fa-whatsapp"></i>WhatsApp
+        </a>
         
-        <div class="social-links">
-            <a href="https://wa.me/5522998346842" class="social-link" target="_blank">
-                <i class="fab fa-whatsapp"></i>WhatsApp
-            </a>
-        
-            <a href="https://www.instagram.com/phgastronomia_/" class="social-link" target="_blank">
-                <i class="fab fa-instagram"></i>Instagram
-            </a>
-        </div>
+        <a href="https://www.instagram.com/phgastronomia_/" class="social-link" target="_blank">
+            <i class="fab fa-instagram"></i>Instagram
+        </a>
     </div>
+</div>
 
     <div id="termos" class="content">
         <h1>Termos de Uso</h1>
@@ -208,5 +255,41 @@
             mostrarConteudo(hash);
         };
     </script>
+
+<!-- Adicionar antes do </body> -->
+<footer>
+    <div class="footer-content">
+<!-- Atualizar a seção de endereço no footer -->
+<div class="footer-section">
+    <h3>Endereço</h3>
+    <p>AV SANTOS MOREIRA, 445</p>
+    <p>BAIRRO MIRAMAR</p>
+    <p>MACAÉ-RJ</p>
+    <p>CEP 27.943-200</p>
+</div>
+
+        <div class="footer-section">
+            <h3>Contato</h3>
+            <p>WhatsApp: (22) 99834-6842</p>
+            <p>E-mail: financeiro@phservicosgast.com</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Links Importantes</h3>
+            <div class="footer-links">
+                <a href="#termos" onclick="mostrarConteudo('termos')">Termos de Uso</a>
+                <a href="#privacidade" onclick="mostrarConteudo('privacidade')">Política de Privacidade</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Atualizar a div legal-info no footer -->
+<div class="legal-info">
+    <p>PH SERVICOS GASTRONOMICOS LTDA</p>
+    <p>CNPJ: 42.232.216/0001-22 (MATRIZ)</p>
+    <p>Desde 08/06/2021</p>
+    <p>© 2025 Todos os direitos reservados</p>
+</div>
+</footer>
 </body>
 </html>
